@@ -5,6 +5,9 @@
 input[type=text] {
   -moz-appearance: textfield;
 }
+input[type=range] {
+  
+}
 :root {
   --swiper-theme-color: #fff !important;
 }
@@ -174,4 +177,3 @@ border-color: white !important;
 background-color: transparent !important; 
 border: 1px solid white!important ; 
 }
-

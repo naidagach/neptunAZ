@@ -14,7 +14,7 @@
 </head>
 <body>
   <header class="relative">
-    <nav class="py-[15px] grid grid-cols-2 px-2 desk1:grid-cols-3 desk1:max-w-[95%] mx-auto">
+    <nav class="py-[15px] grid grid-cols-2 px-2 desk1:grid-cols-3 desk1:max-w-[1280px] mx-auto">
       <a href="/index.htm" class="max-w-[240px] max-one1:w-[80%] pl-[10px] block">
         <svg version="1.1" id="neptun_logo_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="270 250 330 90" style="enable-background:new 270 250 330 90;" xml:space="preserve">
           <style type="text/css">
@@ -140,244 +140,78 @@
         </div>
       </div>
     </nav>
-    <div class="bg-or text-white desk1:py-2">
-      <div class="desk1:max-w-[95%] mx-auto flex justify-between items-center px-2 shadow-2xl relative">
-        <div onclick="handleFirstBars()" class="w-[40px] desk1:hidden">
-          <i class="fa-solid fa-bars-staggered text-[20px] cursor-pointer"></i>
-        </div>
-        <div id="firstbars" class="bg-white text-black p-[20px] uppercase text-[13px] w-[313px] rounded-md absolute left-[-100%] transform translate-x-full opacity-0 transition-all duration-500 top-[100%] z-[999]">
-          <ul>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Meyvə, tərəvəz, quru meyvə</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Ət, toyuq, dəniz məhsulları</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Qastronom</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Ərzaq məhsulları</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Şirniyyat, çay, kofe, diabetik</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">İçkilər</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Süd məhsulları</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Uşaq məhsulları</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Yuyucu,təmizləyici vasitələr</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Kosmetik və gigiyenik</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Məişət, mətbəx, tekstil</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Konselyariya</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Heyvan yemləri</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Yalnız Neptunda</li>
-            <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Elektronika & Mebel</li>
-            <li class="border-b border-[#ddd] py-2 cursor-pointer hover:bg-[#ff840069] bg-or text-white rounded-md px-3">Kampaniyalar</li>
-          </ul>
-        </div>
-          <ul class="my-2 hidden desk1:flex ml-[300px] text-[13px] font-[500]">
-            <li class=" px-1 cursor-pointer">Ana səhifə</li>
-            <li class=" px-1 cursor-pointer">Haqqımızda</li>
-            <li class=" px-1 cursor-pointer">Aksiyalar</li>
-            <li class=" px-1 cursor-pointer">Supermarketlər</li>
-            <li class=" px-1 cursor-pointer">Karyera</li>
-            <li class=" px-1 cursor-pointer">Əlaqə</li>
-          </ul>
-        <div class="flex gap-3 items-center">
-          <i class="fa-solid fa-lock text-[12px] cursor-pointer"></i>
-          <p class="text-[12px] border-r pr-3 hover:text-[#efeeee] cursor-pointer">Giriş</p>
-          <i class="fa-solid fa-angle-down text-[8px] px-2 cursor-pointer"></i>
-          <i class="fa-regular fa-heart cursor-pointer"></i>
-          <i class="fa-solid fa-rotate cursor-pointer transition-transform hover:rotate-180 duration-300"></i>
-          <i class="fa-solid fa-cart-shopping cursor-pointer relative">
-            <p class="bg-[#04ff00] text-black rounded-[50%] text-center font-[500] p-1 px-1.5 text-[12px] absolute top-[-13px] right-[-15px]">0</p>
-          </i>
-        </div>
-        <div onclick="handleSecondBars()" class="desk1:hidden bg-white rounded-md p-1 w-[45px] text-center m-2 cursor-pointer">
-          <i class="fa-solid fa-bars text-[25px] text-or"></i>
-        </div>
-      </div>
+</header>
+<div id="stickyNav" class="bg-or text-white desk1:py-2 z-[9999]">
+  <div class="desk1:max-w-[1280px] mx-auto flex justify-between items-center px-2 shadow-2xl relative">
+    <div onclick="handleBars('firstbars')" class="w-[40px] desk1:hidden">
+      <i class="fa-solid fa-bars-staggered text-[20px] cursor-pointer"></i>
     </div>
-    <div id="secondbars" class="bg-white text-black p-[20px] text-[13px] font-[500] w-[313px] rounded-md absolute left-[-100%] transform translate-x-full opacity-0 transition-all duration-500 top-0 bottom-0 h-[100vh] z-[999]">
-      <i onclick="handleSecondBars()" class="fa-solid fa-xmark cursor-pointer absolute right-5 text-[20px]"></i>
-      <ul class="my-2">
-        <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Ana səhifə</li>
-        <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Haqqımızda</li>
-        <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Aksiyalar</li>
-        <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Supermarketlər</li>
-        <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Karyera</li>
-        <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Əlaqə</li>
+    <div id="firstbars" class="bg-white text-black p-[20px] uppercase text-[13px] w-[313px] rounded-md absolute left-[-100%] transform translate-x-full opacity-0 transition-all duration-500 top-[100%] z-[999]">
+      <ul>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Meyvə, tərəvəz, quru meyvə</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Ət, toyuq, dəniz məhsulları</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Qastronom</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Ərzaq məhsulları</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Şirniyyat, çay, kofe, diabetik</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">İçkilər</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Süd məhsulları</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Uşaq məhsulları</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Yuyucu,təmizləyici vasitələr</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Kosmetik və gigiyenik</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Məişət, mətbəx, tekstil</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Konselyariya</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Heyvan yemləri</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Yalnız Neptunda</li>
+        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Elektronika & Mebel</li>
+        <li class="border-b border-[#ddd] py-2 cursor-pointer hover:bg-[#ff840069] bg-or text-white rounded-md px-3">Kampaniyalar</li>
       </ul>
     </div>
-  </header>
+      <ul class="my-2 hidden desk1:flex ml-[300px] text-[13px] font-[500]">
+        <li class=" px-1 cursor-pointer">Ana səhifə</li>
+        <li class=" px-1 cursor-pointer">Haqqımızda</li>
+        <li class=" px-1 cursor-pointer">Aksiyalar</li>
+        <li class=" px-1 cursor-pointer">Supermarketlər</li>
+        <li class=" px-1 cursor-pointer">Karyera</li>
+        <li class=" px-1 cursor-pointer">Əlaqə</li>
+      </ul>
+    <div class="flex gap-3 items-center">
+      <i class="fa-solid fa-lock text-[12px] cursor-pointer"></i>
+      <p class="text-[12px] border-r pr-3 hover:text-[#efeeee] cursor-pointer">Giriş</p>
+      <i class="fa-solid fa-angle-down text-[8px] px-2 cursor-pointer"></i>
+      <i class="fa-regular fa-heart cursor-pointer"></i>
+      <i class="fa-solid fa-rotate cursor-pointer transition-transform hover:rotate-180 duration-300"></i>
+      <i class="fa-solid fa-cart-shopping cursor-pointer relative">
+        <p class="bg-[#04ff00] text-black rounded-[50%] text-center font-[500] p-1 px-1.5 text-[12px] absolute top-[-13px] right-[-15px]">0</p>
+      </i>
+    </div>
+    <div onclick="handleBars('secondbars')" class="desk1:hidden bg-white rounded-md p-1 w-[45px] text-center m-2 cursor-pointer">
+      <i class="fa-solid fa-bars text-[25px] text-or"></i>
+    </div>
+  </div>
+  <div id="secondbars" class="bg-white text-black p-[20px] text-[13px] font-[500] w-[313px] rounded-md absolute left-[-100%] transform hidden! translate-x-full opacity-0 transition-all duration-500 top-0 bottom-0 h-[100vh] z-[999]">
+    <i onclick="handleBars('secondbars')" class="fa-solid fa-xmark cursor-pointer absolute right-5 text-[20px]"></i>
+    <ul class="my-2">
+      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Ana səhifə</li>
+      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Haqqımızda</li>
+      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Aksiyalar</li>
+      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Supermarketlər</li>
+      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Karyera</li>
+      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Əlaqə</li>
+    </ul>
+  </div>
+  <div class="hidden absolute  desk1:block bg-white text-black border-t-4 border-or w-[20%] mt-[-55px] rounded-[5px] ml-[20px] z-[999]">
+      <p class="text-or font-bold text-[14px] text-center flex items-center gap-4 justify-start px-[20px] py-2">
+        <i class="fa-solid fa-bars text-[20px]"></i>Kateqoriyalar
+      </p>
+      <ul id="menu" class="text-[12px] font-[600] m-[20px]"></ul>
+    </div>
+</div>
   <main class="bg-body">
-    <div class="desk1:flex justify-between content-center">
-      <div class="hidden desk1:block bg-white border-t-4 border-or w-[20%] mt-[-55px] rounded-[5px] ml-[20px] z-[999]">
-        <p class="text-or font-bold text-[14px] text-center flex items-center gap-4 justify-start px-[20px] py-2">
-          <i class="fa-solid fa-bars text-[20px]"></i>Kateqoriyalar
-        </p>
-        <ul class="text-[12px] font-[600] m-[20px]">
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Meyvə, tərəvəz, quru meyvə
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Ət, toyuq, dəniz məhsulları
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Qastronom
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Ərzaq məhsulları
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Şirniyyat, çay, kofe, diabetik
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            İçkilər
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Süd məhsulları
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Uşaq məhsulları
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Yuyucu,təmizləyici vasitələr
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Kosmetik və gigiyenik
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Məişət, mətbəx, tekstil
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Konselyariya
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Heyvan yemləri
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Yalnız Neptunda
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] group">
-            Elektronika & Mebel
-            <div class="z-[999] absolute w-[200px] bg-white left-[109%] top-0 opacity-0 invisible transition-all duration-300 ease-in-out transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <ul>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Meyvə</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Tərəvəz</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Göyərti</li>
-                <li class="px-1 py-2 cursor-pointer hover:text-or">Quru meyvələr</li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-b border-[#ddd] relative px-1 py-2 cursor-pointer hover:bg-[#ff840069] bg-or text-white rounded-md group">Kampaniyalar</li>
-        </ul>
-        
-      </div>
-      <div class="desk1:w-[80%]">
-        <div class="swiper mySwiper m-3 h-[40%]! rounded-md overflow-hidden desk1:max-w-[95%] mx-auto">
+    <div class="desk1:flex justify-between desk1:max-w-[1280px] mx-auto">  
+        <div></div>
+       
+      <div class="desk1:w-[80%] p-2">
+        <div class="swiper mySwiper m-3 h-[40%]! rounded-md overflow-hidden  mx-auto">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="/img/slider1.webp" alt="" /></div>
             <div class="swiper-slide"><img src="/img/slider2.webp" alt="" /></div>
@@ -388,7 +222,7 @@
           <div class="swiper-button-prev"></div>
           <div class="swiper-pagination"></div>
         </div>
-        <div class="flex justify-between items-center gap-6 m-2 desk1:max-w-[95%] mx-auto">
+        <div class="flex justify-between items-center gap-6 m-2 desk1:max-w-[1280px] mx-auto">
           <div class="w-[50%] desk1:w-[30%]">
             <img src="/img/second.webp" alt="" />
             <div class="w-[101%] max-w-[370px] bg-white flex justify-between items-center mb-[5px] py-[15px] px-[10px] text-[12px] font-bold">
@@ -398,7 +232,7 @@
           </div>
           <div class="w-[50%] desk1:w-[30%]">
             <img src="/img/third.webp" alt="" />
-            <div class="w-[102%] max-w-[380px] bg-white flex justify-between items-center mb-[5px] py-[15px] px-[10px] text-[12px] font-bold">
+            <div class="w-[101%] max-w-[380px] bg-white flex justify-between items-center mb-[5px] py-[15px] px-[10px] text-[12px] font-bold">
               <p>50 Azn 50 Bonus</p>
               <i class="fa-solid fa-arrow-right"></i>
             </div>
@@ -415,16 +249,13 @@
     </div>
 
     <div class="bg-body py-[30px]">
-      <div class="px-[15px] desk:w-[95%] m-auto w-full flex flex-col items-center gap-[40px] ">
+      <div class="px-[15px] desk:w-[1280px] m-auto w-full flex flex-col items-center gap-[40px] ">
           <div class="flex flex-col yanyana:flex-row desk:gap-[20px] items-center w-full">
               <div class="flex one:hidden items-center w-full cursor-pointer">
-                  <div
-                      class="border-l-1 border-y-1  border-[#dddddd] bg-white w-full px-[20px] h-[30px] grid place-items-center">
-                      <p id="categ" class="text-[11px] overflow-hidden text-nowrap uppercase text-[#444]">Quru
-                          meyveler</p>
+                  <div class="border-l-1 border-y-1  border-[#dddddd] bg-white w-full px-[20px] h-[30px] grid place-items-center">
+                      <p id="categ" class="text-[11px] overflow-hidden text-nowrap uppercase text-[#444]">Quru meyveler</p>
                   </div>
-                  <div class="h-[30px] w-[30px] bg-or grid place-items-center text-[12px] text-white rounded-r-[3px]">
-                      ▼</div>
+                  <div class="h-[30px] w-[30px] bg-or grid place-items-center text-[12px] text-white rounded-r-[3px]"> ▼</div>
               </div>
               <div
                   class="flex justify-center desk:hidden max-one:hidden gap-[10px] mb-[15px] uppercase text-[#333] text-[12px] font-[500] transition-all duration-200 ease-in items-center w-full">
@@ -502,55 +333,9 @@
                   class="max-desk:border-x-1 max-desk:border-[#e8e8e8] yanyana:w-[65%] w-full max-desk:h-[395px] max-desk:px-[3px]">
                   <div id="sw1" class="w-full h-[384px] overflow-hidden rounded-[7px] ">
                       <div class="swiper mySwiper1 h-[384px]">
-                          <div class="swiper-wrapper">
-                              <div class="swiper-slide overflow-hidden rounded-[7px]">
-                                  <div class="relative w-full h-full flex flex-col  items-center gap-[15px]">
-                                      <i
-                                          class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                      <img src="/img/quru.jpg" alt="" />
-                                      <h1 class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU KG
-                                      </h1>
-                                      <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                      <div class="flex flex-col gap-[10px] items-center">
-                                          <div class="flex items-center gap-[5px] ">
-                                              <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                              <div class="flex items-center">
-                                                  <input id="miqInp" value="1" type="number"
-                                                      class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                                  <span class="text-[11px] text-[#000]">Ədəd</span>
-                                              </div>
-                                              <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                          </div>
-                                          <button
-                                              class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">Səbətə
-                                              at</button>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="swiper-slide overflow-hidden rounded-[7px]">
-                                  <div class="relative w-full h-full flex flex-col   items-center gap-[15px]">
-                                      <i
-                                          class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                      <img src="/img/078043-180x180.jpg" alt="" />
-                                      <h1 class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU KG
-                                      </h1>
-                                      <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                      <div class="flex flex-col gap-[10px] items-center">
-                                          <div class="flex items-center gap-[5px] ">
-                                              <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                              <div class="flex items-center">
-                                                  <input id="miqInp" value="1" type="number"
-                                                      class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                                  <span class="text-[11px] text-[#000]">Ədəd</span>
-                                              </div>
-                                              <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                          </div>
-                                          <button
-                                              class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">Səbətə
-                                              at</button>
-                                      </div>
-                                  </div>
-                              </div>
+                          <div id="swiper1" class="swiper-wrapper">
+                             
+                              
                               <div class="swiper-slide overflow-hidden rounded-[7px]">
                                   <div class="relative w-full h-full flex flex-col  items-center gap-[15px]">
                                       <i
@@ -1266,6 +1051,6 @@
 </div>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="/js/swiper.js"></script>
-  <script src="/js/header.js"></script>
+  <script type="module" src="/js/header.js"></script>
 </body>
 </html>
