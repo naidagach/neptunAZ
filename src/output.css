@@ -10,7 +10,6 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
     --radius-md: 0.375rem;
@@ -437,9 +436,6 @@
   }
   .w-full {
     width: 100%;
-  }
-  .max-w-\[12\] {
-    max-width: 12;
   }
   .max-w-\[100px\] {
     max-width: 100px;
@@ -1221,24 +1217,34 @@
       row-gap: 10px;
     }
   }
+  .desk1\:relative {
+    @media (width >= 990px) {
+      position: relative;
+    }
+  }
+  .desk1\:top-\[140px\] {
+    @media (width >= 990px) {
+      top: 140px;
+    }
+  }
+  .desk1\:top-\[150px\] {
+    @media (width >= 990px) {
+      top: 150px;
+    }
+  }
+  .desk1\:top-\[170px\] {
+    @media (width >= 990px) {
+      top: 170px;
+    }
+  }
   .desk1\:top-\[270px\] {
     @media (width >= 990px) {
       top: 270px;
     }
   }
-  .desk1\:left-\[5\%\] {
-    @media (width >= 990px) {
-      left: 5%;
-    }
-  }
   .desk1\:left-\[8\%\] {
     @media (width >= 990px) {
       left: 8%;
-    }
-  }
-  .desk1\:left-\[10\%\] {
-    @media (width >= 990px) {
-      left: 10%;
     }
   }
   .desk1\:block {
@@ -1286,24 +1292,14 @@
       width: 250px;
     }
   }
-  .desk1\:w-\[400px\] {
-    @media (width >= 990px) {
-      width: 400px;
-    }
-  }
   .desk1\:w-\[450px\] {
     @media (width >= 990px) {
       width: 450px;
     }
   }
-  .desk1\:w-\[500px\] {
+  .desk1\:w-\[550px\] {
     @media (width >= 990px) {
-      width: 500px;
-    }
-  }
-  .desk1\:w-\[600px\] {
-    @media (width >= 990px) {
-      width: 600px;
+      width: 550px;
     }
   }
   .desk1\:max-w-\[1280px\] {
@@ -1480,221 +1476,6 @@
       --tw-translate-y: 0;
       --tw-translate-z: 0;
       --tw-rotate-x: initial;
-      --tw-rotate-y: initial;
-      --tw-rotate-z: initial;
-      --tw-skew-x: initial;
-      --tw-skew-y: initial;
-      --tw-border-style: solid;
-      --tw-leading: initial;
-      --tw-font-weight: initial;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-color: initial;
-      --tw-shadow-alpha: 100%;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-color: initial;
-      --tw-inset-shadow-alpha: 100%;
-      --tw-ring-color: initial;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color: initial;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-duration: initial;
-      --tw-ease: initial;
-    }
-  }
-}
-: repeat(4, minmax(0, 1fr));
-    }
-  }
-  .desk1\:gap-\[10px\] {
-    @media (width >= 990px) {
-      gap: 10px;
-    }
-  }
-  .desk1\:py-2 {
-    @media (width >= 990px) {
-      padding-block: calc(var(--spacing) * 2);
-    }
-  }
-  .uc\:right-\[0px\] {
-    @media (width >= 1000px) {
-      right: 0px;
-    }
-  }
-  .yanyana\:w-\[35\%\] {
-    @media (width >= 1200px) {
-      width: 35%;
-    }
-  }
-  .yanyana\:w-\[65\%\] {
-    @media (width >= 1200px) {
-      width: 65%;
-    }
-  }
-  .yanyana\:flex-row {
-    @media (width >= 1200px) {
-      flex-direction: row;
-    }
-  }
-}
-@property --tw-translate-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-rotate-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-y {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-z {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-y {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-inset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-ring-inset {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-offset-width {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0px;
-}
-@property --tw-ring-offset-color {
-  syntax: "*";
-  inherits: false;
-  initial-value: #fff;
-}
-@property --tw-ring-offset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-duration {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ease {
-  syntax: "*";
-  inherits: false;
-}
-@layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
-      --tw-translate-x: 0;
-      --tw-translate-y: 0;
-      --tw-translate-z: 0;
-      --tw-rotate-x: initial;
-      --tw-rotate-y: initial;
-      --tw-rotate-z: initial;
-      --tw-skew-x: initial;
-      --tw-skew-y: initial;
-      --tw-border-style: solid;
-      --tw-leading: initial;
-      --tw-font-weight: initial;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-color: initial;
-      --tw-shadow-alpha: 100%;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-color: initial;
-      --tw-inset-shadow-alpha: 100%;
-      --tw-ring-color: initial;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color: initial;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-duration: initial;
-      --tw-ease: initial;
-    }
-  }
-}
-otate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
