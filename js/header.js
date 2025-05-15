@@ -7,7 +7,6 @@ const stickyNav = document.getElementById('stickyNav')
 const menu = document.getElementById('menu')
 const products = document.getElementById('swiper1')
 const dataCat = []
-const dataPro = []
 
  window.handleBars = (bar) => {
   if (bar === 'firstbars') {
@@ -63,16 +62,14 @@ function showCategories() {
   })
 }
 
-useGetProducts
+useGetProducts()
 .then(info => {
-  dataPro.length = ''
-  dataPro.push(...info)
-  showProducts()
+  showProducts(info)
 })
 
-function showProducts() {
+function showProducts(res) {
   products.innerHTML = ''
-  dataPro.products.map(item => {
+  res.products.map(item => {
     products.innerHTML += `<div class="swiper-slide overflow-hidden rounded-[7px]">
     <div class="relative w-full h-full flex flex-col  items-center gap-[15px]">
         <i
