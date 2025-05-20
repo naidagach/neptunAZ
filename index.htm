@@ -141,76 +141,79 @@
       </div>
     </nav>
 </header>
-<div id="stickyNav" class="bg-or text-white desk1:py-2 z-[9999]">
-  <div class="desk1:max-w-[1280px] mx-auto flex justify-between items-center px-2 shadow-2xl relative">
-    <div onclick="handleBars('firstbars')" class="w-[40px] desk1:hidden">
-      <i class="fa-solid fa-bars-staggered text-[20px] cursor-pointer"></i>
+<div id="stickyNav" class="bg-or text-white desk1:py-2 z-[9999] relative">
+    <div class="desk1:max-w-[1280px] mx-auto">
+        <div class="flex justify-between items-center px-2 shadow-2xl relative">
+            <div onclick="handleBars('firstbars')" class="w-[40px] desk1:hidden">
+              <i class="fa-solid fa-bars-staggered text-[20px] cursor-pointer"></i>
+            </div>
+            <div id="firstbars" class="bg-white text-black p-[20px] uppercase text-[13px] w-[313px] rounded-md absolute left-[-100%] transform translate-x-full opacity-0 transition-all duration-500 top-[100%] z-[999]">
+              <ul>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Meyvə, tərəvəz, quru meyvə</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Ət, toyuq, dəniz məhsulları</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Qastronom</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Ərzaq məhsulları</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Şirniyyat, çay, kofe, diabetik</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">İçkilər</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Süd məhsulları</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Uşaq məhsulları</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Yuyucu,təmizləyici vasitələr</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Kosmetik və gigiyenik</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Məişət, mətbəx, tekstil</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Konselyariya</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Heyvan yemləri</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Yalnız Neptunda</li>
+                <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Elektronika & Mebel</li>
+                <li class="border-b border-[#ddd] py-2 cursor-pointer hover:bg-[#ff840069] bg-or text-white rounded-md px-3">Kampaniyalar</li>
+              </ul>
+            </div>
+              <ul class="my-2 hidden desk1:flex ml-[30%] text-[13px] font-[500]">
+                <li class=" px-1 cursor-pointer">Ana səhifə</li>
+                <li class=" px-1 cursor-pointer">Haqqımızda</li>
+                <li class=" px-1 cursor-pointer">Aksiyalar</li>
+                <li class=" px-1 cursor-pointer">Supermarketlər</li>
+                <li class=" px-1 cursor-pointer">Karyera</li>
+                <li class=" px-1 cursor-pointer">Əlaqə</li>
+              </ul>
+            <div class="flex gap-3 items-center">
+              <i class="fa-solid fa-lock text-[12px] cursor-pointer"></i>
+              <p class="text-[12px] border-r pr-3 hover:text-[#efeeee] cursor-pointer">Giriş</p>
+              <i class="fa-solid fa-angle-down text-[8px] px-2 cursor-pointer"></i>
+              <i class="fa-regular fa-heart cursor-pointer"></i>
+              <i class="fa-solid fa-rotate cursor-pointer transition-transform hover:rotate-180 duration-300"></i>
+              <i class="fa-solid fa-cart-shopping cursor-pointer relative">
+                <p class="bg-[#04ff00] text-black rounded-[50%] text-center font-[500] p-1 px-1.5 text-[12px] absolute top-[-13px] right-[-15px]">0</p>
+              </i>
+            </div>
+            <div onclick="handleBars('secondbars')" class="desk1:hidden bg-white rounded-md p-1 w-[45px] text-center m-2 cursor-pointer">
+              <i class="fa-solid fa-bars text-[25px] text-or"></i>
+            </div>
+          </div>
+          <div id="secondbars" class="bg-white text-black p-[20px] text-[13px] font-[500] w-[313px] rounded-md absolute left-[-100%] transform hidden! translate-x-full opacity-0 transition-all duration-500 top-0 bottom-0 h-[100vh] z-[999]">
+            <i onclick="handleBars('secondbars')" class="fa-solid fa-xmark cursor-pointer absolute right-5 text-[20px]"></i>
+            <ul class="my-2">
+              <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Ana səhifə</li>
+              <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Haqqımızda</li>
+              <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Aksiyalar</li>
+              <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Supermarketlər</li>
+              <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Karyera</li>
+              <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Əlaqə</li>
+            </ul>
+          </div>
+          <div class="hidden absolute desk1:block bg-white text-black border-t-4 border-or w-[20%] mt-[-55px] rounded-[5px] ml-[20px] z-[99999999] ">
+            <p class="text-or font-bold text-[14px] text-center flex items-center gap-4 justify-start px-[20px] py-2">
+              <i class="fa-solid fa-bars text-[20px]"></i>Kateqoriyalar
+            </p>
+            <ul id="menu" class="text-[12px]  font-[600] relative"></ul>
+        </div>
     </div>
-    <div id="firstbars" class="bg-white text-black p-[20px] uppercase text-[13px] w-[313px] rounded-md absolute left-[-100%] transform translate-x-full opacity-0 transition-all duration-500 top-[100%] z-[999]">
-      <ul>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Meyvə, tərəvəz, quru meyvə</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Ət, toyuq, dəniz məhsulları</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Qastronom</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Ərzaq məhsulları</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Şirniyyat, çay, kofe, diabetik</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">İçkilər</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Süd məhsulları</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Uşaq məhsulları</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Yuyucu,təmizləyici vasitələr</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Kosmetik və gigiyenik</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Məişət, mətbəx, tekstil</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Konselyariya</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Heyvan yemləri</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Yalnız Neptunda</li>
-        <li class="border-b border-[#ddd] px-1 py-2 cursor-pointer hover:bg-[#ff840069]">Elektronika & Mebel</li>
-        <li class="border-b border-[#ddd] py-2 cursor-pointer hover:bg-[#ff840069] bg-or text-white rounded-md px-3">Kampaniyalar</li>
-      </ul>
-    </div>
-      <ul class="my-2 hidden desk1:flex ml-[300px] text-[13px] font-[500]">
-        <li class=" px-1 cursor-pointer">Ana səhifə</li>
-        <li class=" px-1 cursor-pointer">Haqqımızda</li>
-        <li class=" px-1 cursor-pointer">Aksiyalar</li>
-        <li class=" px-1 cursor-pointer">Supermarketlər</li>
-        <li class=" px-1 cursor-pointer">Karyera</li>
-        <li class=" px-1 cursor-pointer">Əlaqə</li>
-      </ul>
-    <div class="flex gap-3 items-center">
-      <i class="fa-solid fa-lock text-[12px] cursor-pointer"></i>
-      <p class="text-[12px] border-r pr-3 hover:text-[#efeeee] cursor-pointer">Giriş</p>
-      <i class="fa-solid fa-angle-down text-[8px] px-2 cursor-pointer"></i>
-      <i class="fa-regular fa-heart cursor-pointer"></i>
-      <i class="fa-solid fa-rotate cursor-pointer transition-transform hover:rotate-180 duration-300"></i>
-      <i class="fa-solid fa-cart-shopping cursor-pointer relative">
-        <p class="bg-[#04ff00] text-black rounded-[50%] text-center font-[500] p-1 px-1.5 text-[12px] absolute top-[-13px] right-[-15px]">0</p>
-      </i>
-    </div>
-    <div onclick="handleBars('secondbars')" class="desk1:hidden bg-white rounded-md p-1 w-[45px] text-center m-2 cursor-pointer">
-      <i class="fa-solid fa-bars text-[25px] text-or"></i>
-    </div>
-  </div>
-  <div id="secondbars" class="bg-white text-black p-[20px] text-[13px] font-[500] w-[313px] rounded-md absolute left-[-100%] transform hidden! translate-x-full opacity-0 transition-all duration-500 top-0 bottom-0 h-[100vh] z-[999]">
-    <i onclick="handleBars('secondbars')" class="fa-solid fa-xmark cursor-pointer absolute right-5 text-[20px]"></i>
-    <ul class="my-2">
-      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Ana səhifə</li>
-      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Haqqımızda</li>
-      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Aksiyalar</li>
-      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Supermarketlər</li>
-      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Karyera</li>
-      <li class="border-b border-[#ddd] px-1 py-3 cursor-pointer hover:text-or">Əlaqə</li>
-    </ul>
-  </div>
-  <div class="hidden absolute  desk1:block bg-white text-black border-t-4 border-or w-[20%] mt-[-55px] rounded-[5px] ml-[20px] z-[999]">
-      <p class="text-or font-bold text-[14px] text-center flex items-center gap-4 justify-start px-[20px] py-2">
-        <i class="fa-solid fa-bars text-[20px]"></i>Kateqoriyalar
-      </p>
-      <ul id="menu" class="text-[12px] font-[600] m-[20px]"></ul>
-    </div>
+
 </div>
   <main class="bg-body">
     <div class="desk1:flex justify-between desk1:max-w-[1280px] mx-auto">  
-        <div></div>
+        <div class=""></div>
        
-      <div class="desk1:w-[80%] p-2">
+      <div class="desk1:w-[75%] p-2">
         <div class="swiper mySwiper m-3 h-[40%]! rounded-md overflow-hidden  mx-auto">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="/img/slider1.webp" alt="" /></div>
@@ -350,256 +353,9 @@
                   <h1 class="text-[#222] font-bold text-[14px]">Endirimli məhsullar</h1>
                   <a href="" class="text-or font-bold text-[14px]">Hamısına bax</a>
               </div>
-              <div id="sw3" class="w-full h-[320px] overflow-hidden rounded-[7px] ">
-                  <div class="swiper mySwiper3 h-[320px]">
-                      <div class="swiper-wrapper">
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col  items-center gap-[15px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <div class="flex items-center gap-[10px]">
-                                      <div
-                                          class="yumru transition-all duration-200 ease-linear h-[36px] w-[36px] text-[#4e4e4e] rounded-full bg-[#ffd9c0] grid place-items-center">
-                                          <span class=" text-[12px] font-[700]">-15%</span>
-                                      </div>
-                                      <div class="flex flex-col">
-                                          <h2 class="text-[#999] text-[16px] font-[400] line-through">2.30₼</h2>
-                                          <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                      </div>
-                                  </div>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span class="max-desk1:hidden">Səbətə at</span>
-                                          <i class="fa fa-shopping-cart text-[14px] desk1:hidden!"></i>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col  items-center gap-[15px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <div class="flex items-center gap-[10px]">
-                                      <div
-                                          class="yumru transition-all duration-200 ease-linear h-[36px] w-[36px] text-[#4e4e4e] rounded-full bg-[#ffd9c0] grid place-items-center">
-                                          <span class=" text-[12px] font-[700]">-15%</span>
-                                      </div>
-                                      <div class="flex flex-col">
-                                          <h2 class="text-[#999] text-[16px] font-[400] line-through">2.30₼</h2>
-                                          <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                      </div>
-                                  </div>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span class="max-desk1:hidden">Səbətə at</span>
-                                          <i class="fa fa-shopping-cart text-[14px] desk1:hidden!"></i>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col  items-center gap-[15px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <div class="flex items-center gap-[10px]">
-                                      <div
-                                          class="yumru transition-all duration-200 ease-linear h-[36px] w-[36px] text-[#4e4e4e] rounded-full bg-[#ffd9c0] grid place-items-center">
-                                          <span class=" text-[12px] font-[700]">-15%</span>
-                                      </div>
-                                      <div class="flex flex-col">
-                                          <h2 class="text-[#999] text-[16px] font-[400] line-through">2.30₼</h2>
-                                          <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                      </div>
-                                  </div>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span class="max-desk1:hidden">Səbətə at</span>
-                                          <i class="fa fa-shopping-cart text-[14px] desk1:hidden!"></i>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col  items-center gap-[15px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <div class="flex items-center gap-[10px]">
-                                      <div
-                                          class="yumru transition-all duration-200 ease-linear h-[36px] w-[36px] text-[#4e4e4e] rounded-full bg-[#ffd9c0] grid place-items-center">
-                                          <span class=" text-[12px] font-[700]">-15%</span>
-                                      </div>
-                                      <div class="flex flex-col">
-                                          <h2 class="text-[#999] text-[16px] font-[400] line-through">2.30₼</h2>
-                                          <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                      </div>
-                                  </div>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span class="max-desk1:hidden">Səbətə at</span>
-                                          <i class="fa fa-shopping-cart text-[14px] desk1:hidden!"></i>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col  items-center gap-[15px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <div class="flex items-center gap-[10px]">
-                                      <div
-                                          class="yumru transition-all duration-200 ease-linear h-[36px] w-[36px] text-[#4e4e4e] rounded-full bg-[#ffd9c0] grid place-items-center">
-                                          <span class=" text-[12px] font-[700]">-15%</span>
-                                      </div>
-                                      <div class="flex flex-col">
-                                          <h2 class="text-[#999] text-[16px] font-[400] line-through">2.30₼</h2>
-                                          <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                      </div>
-                                  </div>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span class="max-desk1:hidden">Səbətə at</span>
-                                          <i class="fa fa-shopping-cart text-[14px] desk1:hidden!"></i>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col  items-center gap-[15px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <div class="flex items-center gap-[10px]">
-                                      <div
-                                          class="yumru transition-all duration-200 ease-linear h-[36px] w-[36px] text-[#4e4e4e] rounded-full bg-[#ffd9c0] grid place-items-center">
-                                          <span class=" text-[12px] font-[700]">-15%</span>
-                                      </div>
-                                      <div class="flex flex-col">
-                                          <h2 class="text-[#999] text-[16px] font-[400] line-through">2.30₼</h2>
-                                          <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                      </div>
-                                  </div>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span class="max-desk1:hidden">Səbətə at</span>
-                                          <i class="fa fa-shopping-cart text-[14px] desk1:hidden!"></i>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col  items-center gap-[15px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <div class="flex items-center gap-[10px]">
-                                      <div
-                                          class="yumru transition-all duration-200 ease-linear h-[36px] w-[36px] text-[#4e4e4e] rounded-full bg-[#ffd9c0] grid place-items-center">
-                                          <span class=" text-[12px] font-[700]">-15%</span>
-                                      </div>
-                                      <div class="flex flex-col">
-                                          <h2 class="text-[#999] text-[16px] font-[400] line-through">2.30₼</h2>
-                                          <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                      </div>
-                                  </div>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span class="max-desk1:hidden">Səbətə at</span>
-                                          <i class="fa fa-shopping-cart text-[14px] desk1:hidden!"></i>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-
-                      </div>
+              <div id="sw3" class="w-full overflow-hidden rounded-[7px] ">
+                  <div class="swiper mySwiper3  ">
+                      <div id="swiper2" class="swiper-wrapper"></div>
 
                       <div class="mySwiper1btnPrev swiper-button-prev">
                           <div class="mySwiper1button-bg mySwiper1bg-prev"></div>
@@ -616,209 +372,10 @@
                   <h1 class="text-[#222] font-bold text-[14px]">Ən çox satılanlar</h1>
                   <a href="" class="text-or font-bold text-[14px]">Hamısına bax</a>
               </div>
-              <div class="w-full h-[320px] overflow-hidden rounded-[7px] ">
-                  <div class="swiper mySwiper3 h-[320px]">
-                      <div class="swiper-wrapper">
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col items-center gap-[20px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span>Səbətə at</span>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col items-center gap-[20px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span>Səbətə at</span>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col items-center gap-[20px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span>Səbətə at</span>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col items-center gap-[20px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span>Səbətə at</span>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col items-center gap-[20px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span>Səbətə at</span>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col items-center gap-[20px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span>Səbətə at</span>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col items-center gap-[20px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span>Səbətə at</span>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="swiper-slide overflow-hidden bg-white rounded-[7px]">
-                              <div class="relative w-full h-full flex flex-col items-center gap-[20px]">
-                                  <i
-                                      class="fa-regular fa-heart cursor-pointer text-or absolute right-[20px] top-[15px] z-[20]"></i>
-                                  <a href=""><img width="112" height="112" src="/img/quru.jpg" alt="" /></a>
-                                  <a href="" class="text-[#222] text-[10px] font-[600] uppercase">CER.ARMUD QURUSU
-                                      KG</a>
-                                  <h1 class="text-[#181818] text-[22px] font-[700]">10.20₼</h1>
-                                  <div class="flex flex-col gap-[10px] items-center">
-                                      <div class="flex items-center gap-[5px] ">
-                                          <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                                          <div class="flex items-center">
-                                              <input id="miqInp" value="1" type="number"
-                                                  class="text-right h-[26px] p-[9px] w-[39px] text-[12px] text-[#3d3d3d] font-[700] outline-none" />
-                                              <span class="text-[11px] text-[#000]">Ədəd</span>
-                                          </div>
-                                          <i class="fa-solid fa-plus text-or cursor-pointer"></i>
-                                      </div>
-                                      <button
-                                          class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">
-                                          <span>Səbətə at</span>
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
+              <div class="w-full min-h-[320px] overflow-hidden rounded-[7px] ">
+                  <div class="swiper mySwiper3 min-h-[320px]">
+                      <div id="swiper3" class="swiper-wrapper">
+                          
                       </div>
 
                       <div class="mySwiper1btnPrev swiper-button-prev">
@@ -849,7 +406,7 @@
       </div>
   </div>
   </main>
-  <footer>
+<footer>
     <div class="relative overflow-hidden bg-or pt-[30px] pb-[40px] px-[30px] flex flex-col gap-[50px] text-white">
         <div class="z-[2] flex items-center max-desk:w-full desk:gap-[30px]">
             <div class="sc max-desk:w-[33.33%] flex flex-col items-center gap-[6px]">
@@ -914,21 +471,98 @@
                 <div class="flex items-center gap-[15px]">
                     <div
                         class="w-[39px] h-[39px] rounded-full grid place-items-center text-or bg-white hover:text-white hover:bg-[#dd7200]">
-                        <i class="text-[20px] fa-brands fa-facebook-f"></i></div>
+                        <i class="text-[20px] fa-brands fa-facebook-f"></i>
+                    </div>
                     <div
                         class="w-[39px] h-[39px] rounded-full grid place-items-center text-or bg-white hover:text-white hover:bg-[#dd7200]">
-                        <i class="text-[20px] fa-brands fa-instagram"></i></div>
+                        <i class="text-[20px] fa-brands fa-instagram"></i>
+                    </div>
                     <div
                         class="w-[39px] h-[39px] rounded-full grid place-items-center text-or bg-white hover:text-white hover:bg-[#dd7200]">
-                        <i class="text-[20px] fa-brands fa-youtube "></i></div>
+                        <i class="text-[20px] fa-brands fa-youtube "></i>
+                    </div>
                     <div
                         class="w-[39px] h-[39px] rounded-full grid place-items-center text-or bg-white hover:text-white hover:bg-[#dd7200]">
-                        <i class="text-[20px] fa-brands fa-linkedin-in"></i></div>
+                        <i class="text-[20px] fa-brands fa-linkedin-in"></i>
+                    </div>
                 </div>
             </div>
             <div class="flex flex-col gap-[15px]">
-                <a href="" class="text-[13px] font-[500] underline underline-offset-4 decoration-dotted">Daha
-                    çox</a>
+                <div id="dahaCox" class="hidden desk:w-full  desk:gap-[5px] desk:flex text-white">
+                    <ul class="text-nowrap flex flex-col max-desk:mb-[20px] gap-[5px]">
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Haqqımızda</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Siyasətimiz</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Yeniliklər</a>
+                        </li>
+                    </ul>
+                    <ul class="text-nowrap flex flex-col max-desk:mb-[20px] gap-[5px]">
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Aksiyalar</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Kampaniyalar</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Neptun bonus kart</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Elektron kataloq</a>
+                        </li>
+                    </ul>
+                    <ul class="text-nowrap flex flex-col max-desk:mb-[20px] gap-[5px]">
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Mağazalarımız</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">İrad və təkliflər</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Alıcıların nəzərinə</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Partnyorluq</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Supermarketdə reklam</a>
+                        </li>
+                    </ul>
+                    <ul class="text-nowrap flex flex-col gap-[5px]">
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Karyera</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">İşə qəbul proseduru</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">Vakansiyalar</a>
+                        </li>
+                        <li class="flex gap-[5px] items-center text-[13px] font-[500]">
+                            <span>❯</span>
+                            <a href="">CV yerləşdirin</a>
+                        </li>
+                    </ul>
+                </div>
+                <a id="hideShow" class="text-[13px] desk:hidden font-[500] underline underline-offset-4 decoration-dotted cursor-pointer">Daha çox</a>
 
             </div>
             <div>
@@ -976,5 +610,6 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="/js/swiper.js"></script>
   <script type="module" src="/js/header.js"></script>
+  <script type="module" src="/js/index.js"></script>
 </body>
 </html>
