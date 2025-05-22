@@ -10,7 +10,7 @@ const pagesArr = [12, 25, 50, 75, 100]
 
 useGetProdbySubId(id).then(info => {
   showSub(info.products)
-  handlePagination(info.totalPages)
+  handlePagination(info.totalPages, 12)
 })
 
 window.handleFiltre = (filt) => {
@@ -43,13 +43,13 @@ function showSub(res) {
   })
 }
 
-function handlePagination(arg) {
+function handlePagination(arg, lim) {
   $('#btns').pagination({
     dataSource: Array(arg).fill('').map((_, i) => i + 1),
     pageSize: 1,
     callback: function(x) {
       if (isLoad) {
-        useGetProdbySubId(id, 12, x[0]).then(info => {
+        useGetProdbySubId(id, lim, x[0]).then(info => {
           showSub(info.products)
         })
       }
@@ -65,9 +65,10 @@ changePages()
 
 
 window.changeAmount = (arg) => {
-  (x) => {
-    useGetProdbySubId(id, arg, undefined).then(info => {
+  () => {
+    useGetProdbySubId(id, arg, 1).then(info => {
       showSub(info.products)
+      handlePagination(info.totalPages, lim)
     })
   }
  }
