@@ -16,8 +16,8 @@ async function useGetProdbyPopular() {
   const res = await fetch(`${BASE_URL}/products/populyar`)
   return await res.json()
 }
-async function useGetProdbySubId(id, limit) {
-  const res = await fetch(`${BASE_URL}/products/subcategory/${id}?limit=${limit}`)
+async function useGetProdbySubId(id, limit=12, page=1) {
+  const res = await fetch(`${BASE_URL}/products/subcategory/${id}?limit=${limit}&page=${page}`)
   return await res.json()
 }
 

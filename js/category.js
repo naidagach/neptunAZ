@@ -1,12 +1,16 @@
 import { useGetProdbySubId } from "../services/api.js"
+import { scrollTop } from "../utility/scrollTo.js"
 
 const kategoriya = document.getElementById('kategoriya')
+const select2 = document.getElementById('select2')
 const url = new URLSearchParams(location.search)
 const id = url.get('id')
+let isLoad = false
+const pagesArr = [12, 25, 50, 75, 100]
 
 useGetProdbySubId(id).then(info => {
-  console.log(info);
   showSub(info.products)
+  handlePagination(info.totalPages)
 })
 
 window.handleFiltre = (filt) => {
@@ -17,7 +21,7 @@ function showSub(res) {
   content.innerHTML = ''
   res.map(item => {
     content.innerHTML += `
-          <div class=" overflow-hidden rounded-[7px] bg-white shadow-2xl py-4 one1:w-[48%] desk:w-[30%] desk1:w-[23%]">
+          <div onclick="location.href='../pages/detail.htm?id=${item.id}'" class=" overflow-hidden rounded-[7px] bg-white shadow-2xl py-4 one1:w-[48%] desk:w-[30%] desk1:w-[23%]">
             <div class="relative w-full h-full flex flex-col items-center gap-[15px]">
                 <img src="${item.img}" alt="" />
                 <h1 class="text-[#222] text-[10px] font-[600] uppercase">${item.name}</h1>
@@ -37,4 +41,33 @@ function showSub(res) {
             </div>
           </div>`
   })
+}
+
+function handlePagination(arg) {
+  $('#btns').pagination({
+    dataSource: Array(arg).fill('').map((_, i) => i + 1),
+    pageSize: 1,
+    callback: function(x) {
+      if (isLoad) {
+        useGetProdbySubId(id, 12, x[0]).then(info => {
+          showSub(info.products)
+        })
+      }
+      isLoad = true;
+      scrollTop(0)
+    }
+})
+}
+window.changePages = () => {
+  select2.innerHTML = pagesArr.reduce((k, p) => k + `<option onclick="changeAmount(${p})">${p}</option>`, '')
+}
+changePages()
+
+
+window.changeAmount = (arg) => {
+  (x) => {
+    useGetProdbySubId(id, arg, undefined )
+  }
+
+  
 }

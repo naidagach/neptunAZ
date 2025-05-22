@@ -9,7 +9,7 @@ const dataCat = []
 
  window.handleBars = (bar) => {
   if (bar === 'firstbars') {
-    firstbars.classList.toggle('left-[-100%]')
+    firstbars.classList.toggle('left-[-110%]')
     firstbars.classList.toggle('left-0')
     firstbars.classList.toggle('opacity-0')
     firstbars.classList.toggle('translate-x-full')

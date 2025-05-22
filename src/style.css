@@ -166,12 +166,10 @@ border: 1px solid white!important ;
 transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-
 .pag .swiper-pagination-bullet-active {
 background-color: transparent !important; 
 border-color: white !important;
 }
-
 
 .pag .swiper-pagination-bullet:not(.pag .swiper-pagination-bullet-active):hover {
 background-color: transparent !important; 
