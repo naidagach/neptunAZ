@@ -66,8 +66,8 @@ changePages()
 
 window.changeAmount = (arg) => {
   (x) => {
-    useGetProdbySubId(id, arg, undefined )
+    useGetProdbySubId(id, arg, undefined).then(info => {
+      showSub(info.products)
+    })
   }
-
-  
-}
+ }
