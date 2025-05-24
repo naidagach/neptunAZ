@@ -5,10 +5,12 @@ const kategoriya = document.getElementById('kategoriya')
 const select2 = document.getElementById('select2')
 const url = new URLSearchParams(location.search)
 const id = url.get('id')
+const page = url.get('page') || 1
+let limit = url.get('limit') || 12
 let isLoad = false
 const pagesArr = [12, 25, 50, 75, 100]
 
-useGetProdbySubId(id).then(info => {
+useGetProdbySubId(id, limit, page).then(info => {
   showSub(info.products)
   handlePagination(info.totalPages, 12)
 })
@@ -47,7 +49,11 @@ function handlePagination(arg, lim) {
   $('#btns').pagination({
     dataSource: Array(arg).fill('').map((_, i) => i + 1),
     pageSize: 1,
+    pageNumber: page,
     callback: function(x) {
+      url.set('page', x[0])
+      const query = location.pathname + '?' + url.toString()
+      history.pushState(null, '', query)
       if (isLoad) {
         useGetProdbySubId(id, lim, x[0]).then(info => {
           showSub(info.products)
@@ -59,16 +65,19 @@ function handlePagination(arg, lim) {
 })
 }
 window.changePages = () => {
-  select2.innerHTML = pagesArr.reduce((k, p) => k + `<option onclick="changeAmount(${p})">${p}</option>`, '')
+  select2.innerHTML = pagesArr.map(p => `<option>${p}</option>`).join('')
+  select2.value = limit
 }
 changePages()
 
 
-window.changeAmount = (arg) => {
-  () => {
-    useGetProdbySubId(id, arg, 1).then(info => {
+window.changeAmount = () => {
+  limit = select2.value
+  url.set('limit', limit)
+  const query = location.pathname + '?' + url.toString()
+  history.pushState(null, '', query)
+    useGetProdbySubId(id, limit, page).then(info => {
       showSub(info.products)
       handlePagination(info.totalPages, lim)
     })
-  }
  }
