@@ -124,11 +124,13 @@
           </svg>
       </a>
       <div class="relative w-[100%]">
-        <div class="border border-or rounded-[30px] flex items-center">
+        <div class="border border-or rounded-[30px] flex items-center relative">
           <i class="fa-solid fa-magnifying-glass p-1 one1:p-2 font-bold text-or"></i>
-          <input type="text" placeholder="Məhsulu axtarın" class="py-1 px-2 one1:py-3 duration-200 text-[10px] s:text-[12px] font-[500] focus:outline-none focus:ring-0" />
+          <input onkeydown="enterEle(event)" oninput="search()" id="searchInp" type="text" placeholder="Məhsulu axtarın" class="py-1 px-2 one1:py-3 duration-200 text-[10px] s:text-[12px] font-[500] focus:outline-none focus:ring-0" />
+          <div id="searchDiv" class="bg-[#fff]  shadow-2xl w-[100%] z-[99999] absolute top-[100%] rounded-2xl overflow-hidden hidden">
+          </div>
         </div>
-        <button class="bg-or hover:bg-[#e4732a] cursor-pointer text-white w-[70px] rounded-[30px] text-[12px] duration-200 py-1 px-2 one1:py-3 absolute top-[1px] right-0">Axtar</button>
+        <button onclick="enterEle(event)" class="bg-or hover:bg-[#e4732a] cursor-pointer text-white w-[70px] rounded-[30px] text-[12px] duration-200 py-1 px-2 one1:py-3 absolute top-[1px] right-0">Axtar</button>
       </div>
       <div class="hidden desk1:flex items-center justify-end gap-2 px-4">
         <div class="flex items-center gap-2">
@@ -141,7 +143,7 @@
       </div>
     </nav>
 </header>
-<div id="stickyNav" class="bg-or text-white z-[9999] relative">
+<div id="stickyNav" class="bg-or text-white z-[9999] relative px-2">
     <div class="desk1:max-w-[1280px] mx-auto">
         <div class="flex justify-between items-center px-2 shadow-2xl relative">
             <div onclick="handleBars('firstbars')" class="w-[40px] desk1:hidden">
@@ -167,8 +169,8 @@
                 <li class="border-b border-[#ddd] py-2 cursor-pointer hover:bg-[#ff840069] bg-or text-white rounded-md px-3">Kampaniyalar</li>
               </ul>
             </div>
-              <ul class=" hidden desk1:flex gap-4 ml-[30%] text-[13px] font-[500]">
-                <li class=" px-1 cursor-pointer py-4">Ana səhifə</li>
+              <ul class=" hidden desk1:flex gap-4 ml-[25%] text-[13px] font-[500]">
+                <li class="cursor-pointer py-4 whitespace-nowrap">Ana səhifə</li>
                 <li class=" px-1 cursor-pointer flex items-center relative gap-2 py-4 group">Haqqımızda <i class="fa-solid fa-angle-down"></i>
                   <div class="hidden absolute top-13 bg-white text-black text-[12px] py-2 rounded-b-2xl overflow-hidden group-hover:block shadow-2xl duration-200 transition-all">
                     <ul>
@@ -177,7 +179,7 @@
                     </ul>
                   </div>
                 </li>
-                <li class=" px-1 cursor-pointer flex items-center gap-2 group">Aksiyalar <i class="fa-solid fa-angle-down"></i>
+                <li class="  cursor-pointer flex items-center gap-2 group">Aksiyalar <i class="fa-solid fa-angle-down"></i>
                   <div class="hidden absolute top-13 bg-white text-black text-[12px] py-2 rounded-b-2xl overflow-hidden group-hover:block shadow-2xl duration-200 transition-all">
                     <ul>
                       <li class="px-4 py-2 hover:bg-pink-100">Kampaniyalar</li>
@@ -186,7 +188,7 @@
                     </ul>
                   </div>
                 </li>
-                <li class=" px-1 cursor-pointer flex items-center gap-2 group">Supermarketlər <i class="fa-solid fa-angle-down"></i>
+                <li class=" cursor-pointer flex items-center gap-2 group">Supermarketlər <i class="fa-solid fa-angle-down"></i>
                   <div class="hidden absolute top-13 bg-white text-black text-[12px] py-2 rounded-b-2xl overflow-hidden group-hover:block shadow-2xl duration-200 transition-all">
                     <ul>
                       <li class="px-4 py-2 hover:bg-pink-100">Mağazalarımız</li>
@@ -197,7 +199,7 @@
                     </ul>
                   </div>
                 </li>
-                <li class=" px-1 cursor-pointer flex items-center gap-2 group">Karyera <i class="fa-solid fa-angle-down"></i>
+                <li class=" cursor-pointer flex items-center gap-2 group">Karyera <i class="fa-solid fa-angle-down"></i>
                   <div class="hidden absolute top-13 bg-white text-black text-[12px] py-2 rounded-b-2xl overflow-hidden group-hover:block shadow-2xl duration-200 transition-all">
                     <ul>
                       <li class="px-4 py-2 hover:bg-pink-100">İşə qəbul proseduru</li>
@@ -206,13 +208,13 @@
                     </ul>
                   </div>
                 </li>
-                <li class=" px-1 cursor-pointer py-4">Əlaqə</li>
+                <li class=" cursor-pointer py-4">Əlaqə</li>
               </ul>
             <div class="flex gap-3 items-center">
               <i class="fa-solid fa-lock text-[12px] cursor-pointer"></i>
               <p class="text-[12px] border-r pr-3 hover:text-[#efeeee] cursor-pointer">Giriş</p>
               <i class="fa-solid fa-angle-down text-[8px] px-2 cursor-pointer"></i>
-              <i class="fa-regular fa-heart cursor-pointer"></i>
+              <i onclick="location.href = '/pages/wishlist.htm'" class="fa-regular fa-heart cursor-pointer"></i>
               <i class="fa-solid fa-rotate cursor-pointer transition-transform hover:rotate-180 duration-300"></i>
               <i class="fa-solid fa-cart-shopping cursor-pointer relative">
                 <p class="bg-[#04ff00] text-black rounded-[50%] text-center font-[500] p-1 px-1.5 text-[12px] absolute top-[-13px] right-[-15px]">0</p>
@@ -284,8 +286,8 @@
     </div>
 
     <div class="bg-body py-[30px]">
-      <div class="px-[15px] desk:max-w-[1280px] m-auto w-full flex flex-col items-center gap-[40px] ">
-          <div class="flex flex-col yanyana:flex-row desk:gap-[20px] items-center w-full">
+      <div class="px-[15px] desk:max-w-[1280px] m-auto w-full flex flex-col items-center gap-[40px] h-[100%]">
+          <div class="flex flex-col yanyana:flex-row desk:gap-[20px] items-center w-full ">
               <div class="flex one:hidden items-center  cursor-pointer">
                   <div class="border-l-1 border-y-1  border-[#dddddd] bg-white w-full px-[20px] h-[30px] grid place-items-center">
                       <p id="categ" class="text-[11px] overflow-hidden text-nowrap uppercase text-[#444]">Quru meyveler</p>
@@ -318,7 +320,7 @@
                                   <div
                                       class="absolute top-0 left-0 w-[154px] h-[100px] p-[19px] bg-[#29292991] text-white text-[18px] font-[500] rounded-br-[25px]">
                                       <p class="mb-[10px]">Kateqoriyalar: </p>
-                                      <span>Meyve</span>
+                                      <span>Quru meyvələr</span>
                                   </div>
                                   <img src="/img/cerez.jpg" alt="" />
                               </a>
@@ -328,7 +330,7 @@
                                   <div
                                       class="absolute top-0 left-0 w-[154px] h-[100px] p-[19px] bg-[#29292991] text-white text-[18px] font-[500] rounded-br-[25px]">
                                       <p class="mb-[10px]">Kateqoriyalar: </p>
-                                      <span>Meyve</span>
+                                      <span>Sehər yeməkləri</span>
                                   </div>
                                   <img src="/img/zavtrak.jpg" alt="" />
                               </a>
@@ -338,7 +340,7 @@
                                   <div
                                       class="absolute top-0 left-0 w-[154px] h-[100px] p-[19px] bg-[#29292991] text-white text-[18px] font-[500] rounded-br-[25px]">
                                       <p class="mb-[10px]">Kateqoriyalar: </p>
-                                      <span>Meyve</span>
+                                      <span></span>
                                   </div>
                                   <img src="/img/siyniyyat.jpg" alt="" />
                               </a>
@@ -348,7 +350,7 @@
                                   <div
                                       class="absolute top-0 left-0 w-[154px] h-[100px] p-[19px] bg-[#29292991] text-white text-[18px] font-[500] rounded-br-[25px]">
                                       <p class="mb-[10px]">Kateqoriyalar: </p>
-                                      <span>Meyve</span>
+                                      <span>NesCake</span>
                                   </div>
                                   <img src="/img/yalniz.jpg" alt="" />
                               </a>
