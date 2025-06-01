@@ -1,10 +1,11 @@
-const wishlist = document.getElementById('wishlist')
-let likes = JSON.parse(localStorage.getItem('likes')) || []
+export let likes = JSON.parse(localStorage.getItem('likes')) || []
 
-function showLikes() {
-    wishlist.innerHTML = ''
+export function showLikes() {
+    const wishlistDiv = document.getElementById('wishlistDiv')
+
+    wishlistDiv.innerHTML = ''
     likes.map(item => {
-        wishlist.innerHTML += 
+        wishlistDiv.innerHTML += 
                         `<div class="bg-[#f9fafb] h-[100px] p-2 my-2 hover:bg-gray-100 rounded-lg shadow-2xl flex justify-around items-center">
                             <div class="flex gap-2 items-center">
                                 <img class="w-[20%]" src="${item.img}" alt="" />
@@ -20,15 +21,4 @@ function showLikes() {
                         </div>`
 
     })
-}
-
-function addToWishlist(item) {
-    const yoxla = likes.find(elem => elem.id == item.id)
-    console.log(likes);
-    if (!yoxla) {
-        item.count = 1
-        likes.push(item)
-        showLikes()
-        localStorage.setItem('likes', JSON.stringify(likes))
-    }
 }

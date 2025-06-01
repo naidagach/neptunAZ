@@ -7,6 +7,7 @@ const stickyNav = document.getElementById('stickyNav')
 const menu = document.getElementById('menu')
 const searchInp = document.getElementById('searchInp')
 const searchDiv = document.getElementById('searchDiv')
+const basketDiv = document.getElementById('basketDiv')
 const dataCat = []
 const dataImg = [ '1meyvə.svg', '2ət.svg', '3Qastronom.svg', '4ərzaq.svg',
                   '5Şirniyyat.svg', '6İçkilər.svg', '7Süd.svg', '8Uşaq.svg', 
@@ -15,20 +16,39 @@ const dataImg = [ '1meyvə.svg', '2ət.svg', '3Qastronom.svg', '4ərzaq.svg',
 
  window.handleBars = (bar) => {
   if (bar === 'firstbars') {
-    firstbars.classList.toggle('hidden')
-    document.body.classList.toggle('overflow-hidden');
+    firstbars.classList.toggle('opacity-0')
+    firstbars.classList.toggle('left-[-200%]')
+    firstbars.classList.toggle('translate-x-full')
+    firstbars.classList.toggle('left-0')
   } else if(bar === 'secondbars') {
-    console.log('salslas');
-    secondbars.classList.toggle('left-[-100%]')
-    secondbars.classList.toggle('left-0')
-    secondbars.classList.toggle('hidden!')
-    secondbars.classList.toggle('opacity-0')
-    secondbars.classList.toggle('translate-x-full')
-    document.body.classList.toggle('overflow-hidden');
+    secondbars.classList.toggle('hidden')
   } else if (bar === 'meyvebar') {
-    meyvebar.classList.toggle('left-[-100%]')
-    meyvebar.classList.toggle('left-0')
+    meyvebar.classList.toggle('hidden')
   }
+  document.body.onclick = (e) => {
+    if (
+      !firstbars.contains(e.target) &&
+      !secondbars.contains(e.target) &&
+      !meyvebar.contains(e.target) &&
+      !e.target.closest('[onclick*="handleBars"]')
+    ) {
+      firstbars.classList.add('opacity-0', 'translate-x-full', 'left-[-200%]');
+      firstbars.classList.remove('left-0');
+      secondbars.classList.add('hidden');
+      secondbars.classList.remove('left-0');
+      meyvebar.classList.add('hidden')
+
+      document.body.onclick = null;
+    }
+  }
+}
+window.openBasket = () => {
+  basketDiv.classList.toggle('hidden')
+  if (!basketDiv.classList.contains('hidden')) {
+  }
+}
+basketDiv.onclick = function (e) {
+  e.stopPropagation()
 }
 // function sticky() {
 //   if (window.scrollY > 700) {

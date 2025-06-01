@@ -143,7 +143,7 @@
       </div>
     </nav>
 </header>
-<div id="stickyNav" class="bg-or text-white z-[9999] relative px-2">
+<div id="stickyNav" class="bg-or text-white z-[9999] relative px-4">
     <div class="desk1:max-w-[1280px] mx-auto">
         <div class="flex justify-between items-center px-2 shadow-2xl relative">
             <div onclick="handleBars('firstbars')" class="w-[40px] desk1:hidden">
@@ -216,8 +216,10 @@
               <i class="fa-solid fa-angle-down text-[8px] px-2 cursor-pointer"></i>
               <i onclick="location.href = '/pages/wishlist.htm'" class="fa-regular fa-heart cursor-pointer"></i>
               <i class="fa-solid fa-rotate cursor-pointer transition-transform hover:rotate-180 duration-300"></i>
-              <i class="fa-solid fa-cart-shopping cursor-pointer relative">
+              <i onclick="openBasket()" class="fa-solid fa-cart-shopping cursor-pointer relative">
                 <p class="bg-[#04ff00] text-black rounded-[50%] text-center font-[500] p-1 px-1.5 text-[12px] absolute top-[-13px] right-[-15px]">0</p>
+                <div id="basketDiv" class="hidden absolute right-[-100px] top-10 desk1:right-0 w-[300px] bg-white shadow-lg border-t-2 border-[#ff8300] p-4 z-50 text-[12px]">
+                </div>
               </i>
             </div>
             <div onclick="handleBars('secondbars')" class="desk1:hidden bg-white rounded-md p-1 w-[45px] text-center m-2 cursor-pointer">

@@ -144,7 +144,7 @@
       </div>
     </nav>
 </header>
-<div id="stickyNav" class="bg-or text-white desk1:z-[999] relative px-2">
+<div id="stickyNav" class="bg-or text-white desk1:z-[999] relative px-4">
     <div class="desk1:max-w-[1280px] mx-auto">
         <div class="flex justify-between items-center px-2 shadow-2xl relative">
             <div onclick="handleBars('firstbars')" class="w-[40px] desk1:hidden">
@@ -217,8 +217,10 @@
               <i class="fa-solid fa-angle-down text-[8px] px-2 cursor-pointer"></i>
               <i onclick="location.href = '/pages/wishlist.htm'" class="fa-regular fa-heart cursor-pointer"></i>
               <i class="fa-solid fa-rotate cursor-pointer transition-transform hover:rotate-180 duration-300"></i>
-              <i class="fa-solid fa-cart-shopping cursor-pointer relative">
+              <i onclick="openBasket()" class="fa-solid fa-cart-shopping cursor-pointer relative">
                 <p class="bg-[#04ff00] text-black rounded-[50%] text-center font-[500] p-1 px-1.5 text-[12px] absolute top-[-13px] right-[-15px]">0</p>
+                <div id="basketDiv" class="hidden absolute right-[-100px] top-10 desk1:right-0 w-[300px] bg-white shadow-lg border-t-2 border-[#ff8300] p-4 z-50 text-[12px]">
+                </div>
               </i>
             </div>
             <div onclick="handleBars('secondbars')" class="desk1:hidden bg-white rounded-md p-1 w-[45px] text-center m-2 cursor-pointer">
@@ -302,10 +304,10 @@
                 <svg class="hover:stroke-[#e17400] cursor-pointer" stroke="#ff8300" fill="#ff8300" stroke-width="0" viewBox="0 0 512 512" height="2.5em" width="3em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88 152h336M88 256h336M88 360h336"></path></svg>
               </div>
               <div class="flex flex-col one:flex-row gap-4 w-full">
-                <div class="flex gap-2 items-center justify-center w-full">
+                <div class="flex gap-2 items-center justify-center desk1:w-[50%]">
                   <p class="text-[10px] font-bold">Sirala</p>
                   <label for="select1">
-                    <select id="select1" class="bg-white rounded-2xl w-full desk:w-[200px] py-[10px] px-[15px] font-bold text-[12px]">
+                    <select id="select1" class="bg-white rounded-2xl text-center w-[130px] py-[10px] px-[15px] font-bold text-[12px]">
                       <option>Əsas</option>
                       <option>Əsas</option>
                       <option>Əsas</option>
@@ -313,18 +315,18 @@
                     </select>
                   </label>
                 </div>
-                <div class="flex gap-2 items-center justify-center">
+                <div class="flex gap-2 items-center justify-center desk1:w-[30%]">
                   <p class="text-[10px] font-bold">Göstər</p>
                   <label for="select2">
-                    <select onchange="changeAmount()" id="select2" class="bg-white rounded-2xl w-full py-[10px] px-[15px] font-bold text-[12px]">
+                    <select onchange="changeSelect()" id="select2" class="bg-white w-[100px] text-center rounded-2xl py-[10px] px-[15px] font-bold text-[12px]">
                     </select>
                   </label>
                 </div>
-                <button class="bg-or text-[12px] cursor-pointer text-white p-3 rounded-[25px] group whitespace-nowrap">
+                <button class="bg-or text-[12px] cursor-pointer text-white p-3 rounded-[25px] group whitespace-nowrap w-[75%] one:max-w-[300px] desk1:w-[200px] mx-auto">
                   <i class="fa-solid fa-rotate transition-transform group-hover:rotate-180 duration-300 "></i>
                   Müqayisə et
                 </button>
-              </div>
+</div>
             </div>
               <div id="content" class="flex flex-col gap-4 one1:flex-row one1:flex-wrap one1:justify-start p-4"></div>
           </div>

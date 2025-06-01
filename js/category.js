@@ -1,7 +1,8 @@
 import { useGetProdbySubId } from "../services/api.js"
 import { scrollTop } from "../utility/scrollTo.js"
+import { basket, showBasket } from "./basket.js"
+import { allProd, products } from "./index.js"
 
-const kategoriya = document.getElementById('kategoriya')
 const select2 = document.getElementById('select2')
 const url = new URLSearchParams(location.search)
 const id = url.get('id')
@@ -14,6 +15,7 @@ const data = []
 useGetProdbySubId(id, limit, page).then(info => {
   data.length = 0
   data.push(...info.products)
+  allProd(info.products)
   showSub(info.products)
   handlePriceFiltre()
   handlePagination(info.totalPages, 12)
@@ -26,20 +28,21 @@ window.handleFiltre = (filt) => {
 function showSub(res) {
   content.innerHTML = ''
   res.map(item => {
+    const count = (products.find(elem => elem.id === item.id)).count || 1
     content.innerHTML += `
-              <div onclick="location.href='../pages/detail.htm?id=${item.id}'" class=" overflow-hidden rounded-[7px] bg-white shadow-2xl py-4 one1:w-[48%] desk:w-[30%] desk1:w-[23%]">
+              <div onclick="location.href='../pages/detail.htm?id=${item.id}'" class=" overflow-hidden rounded-[7px] bg-white shadow-2xl py-4 one1:w-[48%] desk:w-[30%] yanyana:w-[23%]">
                 <div class="relative w-full h-full flex flex-col items-center gap-[15px]">
                     <img src="${item.img}" alt="" />
                     <h1 class="text-[#222] text-[10px] font-[600] uppercase">${item.name}</h1>
                     <h1 class="text-[#181818] text-[22px] font-[700]">${item.price}₼</h1>
                     <div class="flex flex-col gap-[10px] items-center">
                         <div class="flex items-center gap-[5px]">
-                            <i class="fa-solid fa-minus text-or cursor-pointer"></i>
-                            <p class="text-[12px] font-bold px-2">1</p>
-                            <i class="fa-solid fa-plus text-or cursor-pointer"></i>
+                            <i onclick="changeAmount(${item.id}, -1, event)" class="fa-solid fa-minus text-or cursor-pointer"></i>
+                            <p id="amount-${item.id}" class="text-[12px] font-bold px-2">${count}</p>
+                            <i onclick="changeAmount(${item.id}, 1, event)" class="fa-solid fa-plus text-or cursor-pointer"></i>
                         </div>
                         <div>
-                          <button class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">Səbətə at</button>
+                          <button onclick='addToBasket(${JSON.stringify(item)}, event)' class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">Səbətə at</button>
                           <i class="fa-regular fa-heart text-or hover:bg-or hover:text-white p-2 rounded-[50%]"></i>
                           <i class="fa-solid fa-rotate text-or hover:bg-or hover:text-white p-2 rounded-[50%]"></i>
                         </div>
@@ -75,7 +78,7 @@ window.changePages = () => {
 changePages()
 
 
-window.changeAmount = () => {
+window.changeSelect = () => {
   limit = select2.value
   url.set('limit', limit)
   const query = location.pathname + '?' + url.toString()
@@ -109,4 +112,26 @@ function handlePriceFiltre() {
       }
     });
   })
+}
+window.addToBasket = (item, e) => {
+  e.stopPropagation()
+  const check = basket.find(elem => elem.id == item.id) 
+  if(!check) {
+      basket.push(item)
+  } else{
+      check.count += item.count
+  }
+  showBasket()
+  localStorage.setItem('basket', JSON.stringify(basket))
+}
+showBasket()
+
+window.changeAmount = (id, x, e) =>{
+  e.stopPropagation()
+  const item = products.find(elem => elem.id == id)
+  const amount = document.getElementById(`amount-${id}`)
+  if (item.count + x > 0) {
+      item.count += x
+      amount.innerHTML = item.count
+  } else return
 }

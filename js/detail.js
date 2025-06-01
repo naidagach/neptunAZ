@@ -1,4 +1,5 @@
 import { useProdById } from "../services/api.js"
+import { basket, showBasket } from "./basket.js"
 
 const content = document.getElementById('content')
 const url = new URLSearchParams(location.search)
@@ -6,6 +7,7 @@ const id = url.get('id')
 const dataDetail = []
 
 useProdById(id).then(info =>{
+	info.count = 1
   dataDetail.length = 0
   dataDetail.push(info)
   showDetail()
@@ -34,18 +36,42 @@ content.innerHTML = `
                   </div>
                   <p class="text-[14px] mb-1">Model: <span class="font-bold text-[#545e6d]">930201</span></p>
                   <p class="text-[14px] mb-4">Movcudluq: <span class="font-bold text-[#545e6d]">✓</span></p>
-                  <h1 class="text-[30px] text-or mb-4 font-bold">${item.price}₼</h1>
+                  <h1 id="qiymet" class="text-[30px] text-or mb-4 font-bold">${(item.price * item.count).toFixed(2)}</h1>
                   <div class="flex items-center gap-2">
-                    <p class="bg-[#e5e7eb] rounded-[50%] p-2 w-[32px] h-[32px] flex justify-center items-center font-bold text-xl cursor-pointer">-</p>
-                    <p class="text-[20px]">1</p>
-                    <p class="bg-[#e5e7eb] rounded-[50%] p-2 w-[32px] h-[32px] flex justify-center items-center font-bold text-xl cursor-pointer">+</p>
+                    <p onclick="changeAmount(-1)" class="bg-[#e5e7eb] rounded-[50%] p-2 w-[32px] h-[32px] flex justify-center items-center font-bold text-xl cursor-pointer">-</p>
+                    <p id="amount" class="text-[20px]">${item.count}</p>
+                    <p onclick="changeAmount(1)" class="bg-[#e5e7eb] rounded-[50%] p-2 w-[32px] h-[32px] flex justify-center items-center font-bold text-xl cursor-pointer">+</p>
                     <p class="text-[20px]">Eded</p>
                   </div>
                   <div>
-                    <button class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">Səbətə at</button>
+                    <button onclick='addToBasket(${JSON.stringify(item)}, event)' class="cursor-pointer text-white hover:bg-[#de7200] bg-or px-[21px] h-[31px] rounded-[15px] transition-all duration-200 ease-in font-[600] text-[12px]">Səbətə at</button>
                     <i class="fa-regular fa-heart text-or hover:bg-or hover:text-white p-2 rounded-[50%]"></i>
                     <i class="fa-solid fa-rotate text-or hover:bg-or hover:text-white p-2 rounded-[50%]"></i> 
                   </div>
                 </div>
               </div>`
 }
+
+window.changeAmount = (x) =>{
+	const amount = document.getElementById('amount')
+	const qiymet = document.getElementById('qiymet')
+	const item = dataDetail[0]
+  if (item.count + x > 0) {
+    item.count = item.count + x
+    amount.innerHTML = item.count 
+    qiymet.innerHTML = (item.price * item.count).toFixed(2) + '₼'
+  }
+}
+
+window.addToBasket = (item, e) => {
+	e.stopPropagation()
+	const check = basket.find(elem => elem.id == item.id) 
+	if(!check) {
+		basket.push(item)
+	} else{
+		check.count += item.count
+	}
+	showBasket()
+	localStorage.setItem('basket', JSON.stringify(basket))
+  }
+  showBasket()
